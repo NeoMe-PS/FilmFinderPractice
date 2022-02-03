@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="zootopia">Зверополис</string>
+    <string name="zootopia_desc">Зверополис</string>
+    <string name="parasite">Паразиты</string>
+    <string name="parasite_desc">Паразиты</string>
+    <string name="madMax">Сумшедший Макс</string>
+    <string name="madMax_desc">Сумшедший Макс</string>
+    <string name="lalaLand">Ла ла лэнд</string>
+    <string name="lalaLand_desc">Ла ла лэнд</string>
+    <string name="interstellar">Интерстеллар</string>
+    <string name="interstellar_desc">Интерстеллар</string>
+    <string name="dallasBuyers">Даллаский клуб покупателей</string>
+    <string name="dallasBuyers_desc">Даллаский клуб покупателей</string>
+    <string name="bladeRunner">Бегущий по лезвию</string>
+    <string name="bladeRunnerDesc">Полицейский ищет Рика Декарда, пропавшего 30 лет назад. Красивый сиквел культового сай-фая от Дени Вильнёва</string>
+    <string name="birdMan">Бёрдман</string>
+    <string name="birdMan_desc">Бёрдман</string>
+    <string name="threeBoards">Три билборда на границе</string>
+    <string name="threeBoards_desc">Три билборда на границе</string>
+</resources>
