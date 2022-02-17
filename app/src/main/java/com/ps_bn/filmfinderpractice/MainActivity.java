@@ -5,9 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -36,25 +40,22 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-   /* @Override
-    protected void onSaveInstanceState(@NonNull Bundle outState) {
-        super.onSaveInstanceState(outState);
-        if (textView!=null) {
-            int color = textView.getCurrentTextColor();
-            outState.putInt(KEY, color);
-            Log.d(TAG, "onSaveInstanceState:[" + outState.get(KEY) + "]");
-            Log.d(TAG, "GetColorIs:[" + textView.getCurrentTextColor() + "]");
-        }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main,menu);
+        return true;
     }
 
     @Override
-    protected void onRestoreInstanceState(@NonNull Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
-        if (savedInstanceState!=null) {
-            int k=savedInstanceState.getInt(KEY);
-                textView.setTextColor(k);
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        int id =item.getItemId();
+        if (id == R.id.action_settings) {
+            inviteFriend();
+            return true;
         }
-    }*/
+        return super.onOptionsItemSelected(item);
+    }
 
     private ArrayList<RecyclerViewItem> fillList() {
         ArrayList<RecyclerViewItem> arrayList = new ArrayList<>();
@@ -71,7 +72,8 @@ public class MainActivity extends AppCompatActivity {
         return arrayList;
     }
 
-    public void inviteFriend(View view) {
+    @SuppressLint("QueryPermissionsNeeded")
+    public void inviteFriend() {
         String textMessage = "Переходи по ссылке и смотри фильмы вместе со мной!";
         Intent sendIndent = new Intent();
         sendIndent.setAction(Intent.ACTION_SEND);
@@ -83,5 +85,6 @@ public class MainActivity extends AppCompatActivity {
         if (sendIndent.resolveActivity(getPackageManager()) != null) {
             startActivity(chooser);
         }
+
     }
 }
